@@ -28,7 +28,7 @@ body, html{
 }
 .btn:hover{
     background-color: transparent;
-    border: 2px solid red;
+    outline: 2px solid red;
     color: red;
 }
 
@@ -182,17 +182,70 @@ body, html{
 
 /* -------------------- */
 
-
+/* ------------------------- */
 .book_table_img{
     background-color: rgb(140, 124, 124);
-    grid-column: 1/7;
+    grid-column: 1/6;
+    height: 650px;
+}
+.book_table_img img{
+    width: 100%;
+    height: 650px;
+    object-fit: fill;
 }
 
 .book_table_form{
-    background-color: lightsalmon;
-    grid-column: 7/-1;
-
+    /* background-color: lightsalmon; */
+    grid-column: 6/-1;
+    height: 650px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 130px 1fr;
 }
+.book_table_form  h1{
+    padding: 50px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.book_table_form  h1 > span{
+    color: red;
+}
+
+form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-gap: 10px; */
+    padding: 50px;
+    margin-left: 30px;
+}
+form > p > label{
+    font-size: 20px;
+}
+form > p > input{
+    font-size: 15px;
+    padding: 15px 25px;
+    border: 1px solid gray;
+    outline: none;
+    margin-top: 10px;
+    letter-spacing: 1.5px;
+}
+form > p > select{
+    padding: 15px 25px;
+    border: 1px solid gray;
+    font-size: 15px;
+    margin-top: 10px;
+    outline: none;
+    width: 235px;
+    color: gray;
+}
+
+p > button{
+    margin-top: 10px;
+}
+
+
+
+/* -------------------- */
 
 .contact_us{
     background-color: violet;
@@ -203,3 +256,78 @@ body, html{
     background-color: rgb(121, 94, 121);
     grid-column: 1/-1;
 }
+
+/* --------------- */
+/* media queries */
+@media only screen and (max-width:480px){
+    .container{
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+        text-align: center;
+    }
+    /* header */
+    .header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: url("./images/header.jpg"), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+        background-blend-mode: overlay;  
+    }
+    
+    
+    .headline{
+        padding: 20px;
+        grid-column: 1/-1;
+    }
+    
+    .headline > h1{
+        color: white;
+    }
+    
+    .headline > p{
+        color: white;
+        width: 400px;
+    }
+    
+    
+    .headline_img > .btn{
+        grid-column: 2/3;
+    }
+    
+    
+    .headline_img p{
+        color: white;
+    }
+    
+    
+    .header_img{ 
+        display: none;
+    }
+    
+    /* header end */
+    
+    /* body  */
+    .welcome_heading {
+        height: 30px;
+        width: 100%;
+        grid-column: 1/-1;
+    }
+    /* body end */
+    
+    /* book table */
+    form{
+        grid-column: 1fr;
+    }
+    form > p:last-child{
+        /* grid-column: 1fr; */
+        grid-column: 1/-1;
+        
+    }
+    form > p:last-child button{
+        width: 100%;
+    }
+    /* book table end */
+    
+}
+/* media queries end*/
