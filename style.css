@@ -258,7 +258,7 @@ p > button {
   color: white;
 }
 .footer {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -345,6 +345,7 @@ p > button {
 
 .footer_message{
     /* background-color: burlywood; */
+    color: black;
     grid-column: 1/-1;
     text-align: center;
     line-height: 50px;
